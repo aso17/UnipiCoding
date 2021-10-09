@@ -137,6 +137,7 @@
           <p> <a href="#"><i class="fab fa-facebook-f" style="color: rgb(0, 94, 255);"> Facebook</i></a></p>
           <p><a href="#"><i class="fab fa-instagram-square" style="color: #ff1493;"> Instagram</i></a></p>
           <p><a href="#"><i class="fab fa-github" style="color: #1b1619;"> Github</i></a></p>
+          <p> <button class="btn btn-sm " type="button" id="klik" data-bs-toggle="modal" data-bs-target="#exampleModal">klik untuk chat</button></p>
         </div>
       </div>
       </div>
@@ -169,13 +170,17 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Kirim Pesan</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close " style="background-color: red;"></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3">
             <label for="nama" class="form-label ms-2">Nama Lengkap</label>
             <input type="nama" class="form-control" id="nama" aria-describedby="nama" />
+          </div>
+          <div class="mb-3">
+            <label for="telepon" class="form-label ms-2">Nomer Telepon</label>
+            <input type="telepon" class="form-control" id="telepon" aria-describedby="telepon" />
           </div>
           <div class="mb-3">
             <label for="email" class="form-label ms-2">Email</label>
