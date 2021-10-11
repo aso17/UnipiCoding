@@ -135,7 +135,7 @@
           <p> <a href="#"><i class="fab fa-facebook-f" style="color: rgb(0, 94, 255);"> Facebook</i></a></p>
           <p><a href="#"><i class="fab fa-instagram-square" style="color: #ff1493;"> Instagram</i></a></p>
           <p><a href="#"><i class="fab fa-github" style="color: #1b1619;"> Github</i></a></p>
-          <p> <button class="btn btn-sm " type="button" id="klik" data-bs-toggle="modal" data-bs-target="#exampleModal">kirim Pesan</button></p>
+          <p> <button class="btn btn-sm " type="button" id="klik" data-bs-toggle="modal" data-bs-target="#exampleModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">kirim Pesan</button></p>
         </div>
       </div>
       </div>
@@ -163,14 +163,16 @@
       <!-- Button trigger modal -->
       
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     
+      <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-disabled="true" >
         <div class="modal-dialog">
           <div class="modal-content">
       <div class="modal-">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="btn-close btn-danger " data-bs-dismiss="modal" aria-label=" " style="background-color: red; float: right; margin: 5px;"></button>
+        <button type="button" class="btn-close btn-danger " data-bs-dismiss="modal" aria-label=" " style=" float: right; margin: 5px;"></button>
       </div>
       <div class="modal-body">
+  
         <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="notif">
           <strong>Terima Kasih...</strong>Pesan Sudah Kami Terima.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -179,32 +181,38 @@
           <div class="mb-3">
             <label for="nama" class="form-label ms-2">Nama Lengkap</label>
             <input type="nama" name="nama" class="form-control" id="nama" aria-describedby="nama" / autocomplete="off" >
+            <span id="valid" class="text"></span>
           </div>
           <div class="mb-3">
             <label for="no_telepon" class="form-label ms-2">Nomer Telepon</label>
             <input type="text" name="no_telepon" class="form-control" id="no_telepon" aria-describedby="no_telepon" / autocomplete="off" >
+            <span id="validNomer" class="text"></span>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label ms-2">Email</label>
             <input type="email" name="email" class="form-control" id="email" aria-describedby="email" / autocomplete="off" >
+            <span id="validEmail" class="text"></span>
           </div>
           <div class="mb-3">
             <div class="form-floating">
               <textarea class="form-control" name="pesan" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" ></textarea>
               <label for="floatingTextarea2" autocomplete="off">Pesan</label>
+              <span id="validPesan" class="text"></span>
             </div>
           </div>
 
-          <button type="submit" class="btn btn-sm btn-outline-secondary float-end text-danger fw-bold" id="kirim">Kirim</button>
-          <button class="btn btn-sm btn-dark float-end text-light d-none" type="button" disabled id="loading">
+        </form>
+        <div class="btnkirim">
+          <button type="button" class="btn btn-sm btn-outline-success text-light float-end  fw-bold" id="kirim" >Kirim</button>
+          <button class="btn btn-sm btn-dark float-end text-light d-none" type="button" disabled id="loading" >
             <span class="spinner-border spinner-border-sm text-danger" role="status" aria-hidden="true"></span>
             Loading...
           </button>
-        </form>
+          
+        </div>
       </div>
-      <div class="modal-footer"></div>
     </div>
   </div>
 </div>
-
+</script>
 <script src="./js/form.js"></script>

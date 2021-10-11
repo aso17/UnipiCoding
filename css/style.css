@@ -6,9 +6,21 @@ section {
   color: #fff;
 }
 #exampleModal {
-  margin-top: 3rem;
-  padding: auto;
 }
 .modal-body {
+  background-color: #fff;
+  overflow: scroll;
+}
+.text {
+  color: #c71717;
+  /* margin-left: 3px; */
+}
+
+.btnkirim button {
+  width: 100%;
+  text-align: center;
   background-color: #00cba9;
+}
+label {
+  color: #00cba9;
 }

@@ -4,39 +4,70 @@ const btnLoading = document.querySelector("#loading");
 const notif = document.querySelector("#notif");
 var validasiHuruf = /^[a-zA-Z ]+$/;
 var validasiAngka = /^[0-9]+$/;
-// const jmlnomer = 12;
-form.addEventListener("submit", (e) => {
+let spanKosong = "tidak boleh kosong!";
+let harusangka = "harus angka!";
+let harusduabelas = "harus 12 karakter angka!";
+let harustext = "harus huruf!";
+const valid = document.querySelector("#valid");
+const validnomer = document.querySelector("#validNomer");
+const validEmail = document.querySelector("#validEmail");
+const validPesan = document.querySelector("#validPesan");
+btnKirim.addEventListener("click", (e) => {
   if (form["nama"].value == "") {
-    alert("Nama tidak boleh kosong");
+    valid.insertAdjacentHTML("afterbegin", spanKosong);
+    setTimeout(function () {
+      valid.textContent = "";
+    }, 3000);
     form["nama"].focus();
-    // return false;
+    return false;
   } else if (!form["nama"].value.match(validasiHuruf)) {
-    alert("Nama Harus huruf");
+    valid.insertAdjacentHTML("afterbegin", harustext);
+    setTimeout(function () {
+      valid.textContent = "";
+    }, 3000);
     form["nama"].value == "";
     form["nama"].focus();
     return false;
   } else if (form["no_telepon"].value == "") {
-    alert("Nomer telepon wajib diisi");
+    validnomer.insertAdjacentHTML("afterbegin", spanKosong);
+    setTimeout(function () {
+      validnomer.textContent = "";
+    }, 3000);
     form["no_telepon"].focus();
-    // return false;
-  } else if (form["no_telepon"].value.length != 12) {
-    alert("Nomer telepon harus 12 karakter!");
-    form["no_telepon"].focus();
-    // return false;
+    return false;
   } else if (!form["no_telepon"].value.match(validasiAngka)) {
-    alert("Nomer telepon harus angka!");
+    validnomer.insertAdjacentHTML("afterbegin", harusangka);
+    setTimeout(function () {
+      validnomer.textContent = "";
+    }, 3000);
+    form["no_telepon"].focus();
+    return false;
+  } else if (form["no_telepon"].value.length != 12) {
+    validnomer.insertAdjacentHTML("afterbegin", harusduabelas);
+    setTimeout(function () {
+      validnomer.textContent = "";
+    }, 3000);
     form["no_telepon"].focus();
     return false;
   } else if (form["email"].value == "") {
-    alert("Email harus diisi!");
+    validEmail.insertAdjacentHTML("afterbegin", spanKosong);
+    setTimeout(function () {
+      validEmail.textContent = "";
+    }, 3000);
     form["email"].focus();
     return false;
   } else if (form["pesan"].value == "") {
-    alert("Harap tuliskan Pesan !");
+    validPesan.insertAdjacentHTML("afterbegin", spanKosong);
+    setTimeout(function () {
+      validPesan.textContent = "";
+    }, 3000);
     form["pesan"].focus();
-    // return false;
+    return false;
   } else if (!form["pesan"].value.match(validasiHuruf)) {
-    alert("format pesan harus huruf!");
+    validPesan.insertAdjacentHTML("afterbegin", harustext);
+    setTimeout(function () {
+      validPesan.textContent = "";
+    }, 3000);
     form["pesan"].focus();
     return false;
   } else {
