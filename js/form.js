@@ -4,8 +4,14 @@ const btnLoading = document.querySelector("#loading");
 const notif = document.querySelector("#notif");
 var validasiHuruf = /^[a-zA-Z ]+$/;
 var validasiAngka = /^[0-9]+$/;
+
+var atps = form["email"].value.indexOf("@");
+var dots = form["email"].value.lastIndexOf(".");
+// console.log(dots);
+
 let spanKosong = "tidak boleh kosong!";
 let harusangka = "harus angka!";
+let harusemail = "email tidak valid!";
 let harusduabelas = "harus 12 karakter angka!";
 let harustext = "harus huruf!";
 const valid = document.querySelector("#valid");
@@ -51,6 +57,13 @@ btnKirim.addEventListener("click", (e) => {
     return false;
   } else if (form["email"].value == "") {
     validEmail.insertAdjacentHTML("afterbegin", spanKosong);
+    setTimeout(function () {
+      validEmail.textContent = "";
+    }, 3000);
+    form["email"].focus();
+    return false;
+  } else if (form["email"].value.indexOf("@") === -1 || form["email"].value.indexOf(".") === -1) {
+    validEmail.insertAdjacentHTML("afterbegin", harusemail);
     setTimeout(function () {
       validEmail.textContent = "";
     }, 3000);
