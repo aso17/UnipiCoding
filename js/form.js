@@ -30,7 +30,7 @@ btnKirim.addEventListener("click", (e) => {
     valid.insertAdjacentHTML("afterbegin", harustext);
     setTimeout(function () {
       valid.textContent = "";
-    }, 3000);
+    }, 2000);
     form["nama"].value == "";
     form["nama"].focus();
     return false;
@@ -38,49 +38,49 @@ btnKirim.addEventListener("click", (e) => {
     validnomer.insertAdjacentHTML("afterbegin", spanKosong);
     setTimeout(function () {
       validnomer.textContent = "";
-    }, 3000);
+    }, 2000);
     form["no_telepon"].focus();
     return false;
   } else if (!form["no_telepon"].value.match(validasiAngka)) {
     validnomer.insertAdjacentHTML("afterbegin", harusangka);
     setTimeout(function () {
       validnomer.textContent = "";
-    }, 3000);
+    }, 2000);
     form["no_telepon"].focus();
     return false;
   } else if (form["no_telepon"].value.length != 12) {
     validnomer.insertAdjacentHTML("afterbegin", harusduabelas);
     setTimeout(function () {
       validnomer.textContent = "";
-    }, 3000);
+    }, 2000);
     form["no_telepon"].focus();
     return false;
   } else if (form["email"].value == "") {
     validEmail.insertAdjacentHTML("afterbegin", spanKosong);
     setTimeout(function () {
       validEmail.textContent = "";
-    }, 3000);
+    }, 2000);
     form["email"].focus();
     return false;
   } else if (form["email"].value.indexOf("@") === -1 || form["email"].value.indexOf(".") === -1) {
     validEmail.insertAdjacentHTML("afterbegin", harusemail);
     setTimeout(function () {
       validEmail.textContent = "";
-    }, 3000);
+    }, 2000);
     form["email"].focus();
     return false;
   } else if (form["pesan"].value == "") {
     validPesan.insertAdjacentHTML("afterbegin", spanKosong);
     setTimeout(function () {
       validPesan.textContent = "";
-    }, 3000);
+    }, 2000);
     form["pesan"].focus();
     return false;
   } else if (!form["pesan"].value.match(validasiHuruf)) {
     validPesan.insertAdjacentHTML("afterbegin", harustext);
     setTimeout(function () {
       validPesan.textContent = "";
-    }, 3000);
+    }, 2000);
     form["pesan"].focus();
     return false;
   } else {
